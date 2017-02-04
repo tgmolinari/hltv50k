@@ -37,7 +37,6 @@ class CSGOCameraMan(multiprocessing.Process):
 				self.live_flag = True
 				self.ct_name = message[2]
 				self.t_name = message[1]
-				print("RIGHT U ARE BOB")
 			elif message[0] == 1:#message [2,curr_round]
 				if(self.live_flag and not(self.halftime_flag)):
 					print("CHICKA")
@@ -68,7 +67,7 @@ class CSGOCameraMan(multiprocessing.Process):
 							self.t_score = self.t_score + self.ct_score
 							self.ct_score = self.t_score - self.ct_score
 							self.t_score = self.t_score - self.ct_score
-							print("Swapping scoires at half")
+							print("Swapping scores at half")
 							self.score_swap_lock = 0						
 			else:	
 				pass
@@ -95,5 +94,3 @@ class CSGOCameraMan(multiprocessing.Process):
 			self.t_score = t_score
 			self.ct_score = ct_score
 			return(str(prev_round_win))
-			#if self.prev_round == 15:
-			#	self.live_flag = False
